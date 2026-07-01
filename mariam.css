@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#021526;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+#waterCanvas{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:100;
+}
+
+#mainName{
+
+    font-size:120px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:8px;
+
+    color:transparent;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #8be9ff 30%,
+        #22b8ff 60%,
+        #0077ff 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    text-shadow:
+        0 0 15px rgba(0,200,255,.5),
+        0 0 30px rgba(0,200,255,.5),
+        0 0 60px rgba(0,200,255,.5);
+
+    animation:
+        glow 3s ease-in-out infinite alternate,
+        float 5s ease-in-out infinite;
+}
+
+.content h2{
+
+    margin-top:25px;
+
+    font-size:40px;
+
+    color:#b9f7ff;
+
+    letter-spacing:6px;
+
+    text-shadow:
+        0 0 10px #00d9ff,
+        0 0 20px #00d9ff;
+}
+
+@keyframes glow{
+
+0%{
+text-shadow:
+0 0 15px #00c8ff6c,
+0 0 30px #0d0666;
+}
+
+100%{
+text-shadow:
+0 0 35px #98aa13,
+0 0 70px #850654,
+0 0 120px #0088ff;
+}
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.scene::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:rgba(0,170,255,.15);
+
+filter:blur(120px);
+
+border-radius:50%;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+}
+
+@media(max-width:768px){
+
+#mainName{
+
+font-size:70px;
+
+letter-spacing:4px;
+
+}
+
+.content h2{
+
+font-size:24px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+#mainName{
+
+font-size:50px;
+
+letter-spacing:2px;
+
+}
+
+.content h2{
+
+font-size:18px;
+
+}
+
+}
