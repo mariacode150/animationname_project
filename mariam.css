@@ -117,9 +117,7 @@ content:"";
 
 position:absolute;
 
-width:100px;
-height:500px;
-
+ 
 background:rgba(0,170,255,.15);
 
 filter:blur(120px);
